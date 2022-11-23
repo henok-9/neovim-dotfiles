@@ -37,7 +37,8 @@ end
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
   keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
 
-
+require'lspconfig'.clangd.setup{}
+require'lspconfig'.pyright.setup{}
 -- used to enable autocompletion (assign to every lsp server config)
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
@@ -57,6 +58,52 @@ require'lspconfig'.pyright.setup({
   }
 
 
+})
+
+
+require'lspconfig'.rust_analyzer.setup({})
+local server = {
+	cmd = { "rust-analyzer" },
+	filetypes = { "rust" },
+	settings = {
+		-- to enable rust-analyzer settings visit:
+		-- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+		["rust-analyzer"] = {
+			-- enable clippy on save
+			checkOnSave = {
+				command = "clippy-driver"
+				},
+			}
+		}
+	}
+
+
+local nvim_lsp = require'lspconfig'
+--
+-- on_attach = function(client)
+--     require'completion'.on_attach(client)
+-- end
+
+nvim_lsp.rust_analyzer.setup({
+    on_attach=on_attach,
+    settings = {
+        ["rust-analyzer"] = {
+            imports = {
+                granularity = {
+                    group = "module",
+                },
+                prefix = "self",
+            },
+            cargo = {
+                buildScripts = {
+                    enable = true,
+                },
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    }
 })
 
 -- configure html server
