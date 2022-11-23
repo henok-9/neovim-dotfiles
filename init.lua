@@ -16,8 +16,8 @@ require("koneh.plugins.treesitter")
 require("koneh.plugins.gitsigns")
 require("koneh.plugins.coc")
 -- clangd setup 
-require'lspconfig'.clangd.setup{}
 
-
-require'lspconfig'.pyright.setup{}
 require('leap').add_default_mappings()
+
+
+
