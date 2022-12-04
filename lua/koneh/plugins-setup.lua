@@ -21,6 +21,7 @@ vim.cmd([[
  
 -- import packer safely
 local status, packer = pcall(require, "packer")
+packer = pcall(require, "packer")
 if not status then
   return end
 -- ^^^ installs packer if not installed when starting neovim
@@ -55,7 +56,6 @@ return packer.startup(function(use)
     use 'joshdick/onedark.vim'
     use 'ghifarit53/tokyonight-vim'
     use 'eddyekofo94/gruvbox-flat.nvim'
-    use 'numToStr/FTerm.nvim'
     use ({'echasnovski/mini.nvim', branch = 'stable' })
     use 'catppuccin/nvim'
     use {'frenzyexists/aquarium-vim',  branch = develop }
@@ -68,22 +68,16 @@ return packer.startup(function(use)
     -- essential plugins
     use("tpope/vim-surround") -- add, delete, change surroundings 
     use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
-    
     -- commenting with gc
     use("numToStr/Comment.nvim")
-    
     -- leap motions, move around like a ninja 
     use("ggandor/leap.nvim")
     -- use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
     use 'deoplete-plugins/deoplete-clang'
-    
     -- file explorer
     use("nvim-tree/nvim-tree.lua")
-        
     -- vs-code like icons
     use("nvim-tree/nvim-web-devicons")
-    
-    -- statusline
     use("nvim-lualine/lualine.nvim")
     use("glepnir/galaxyline.nvim")
         
@@ -137,7 +131,15 @@ return packer.startup(function(use)
     -- formatting & linting
     use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
     use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls    
+    
+    -- copilot 
+    use("github/copilot.vim")
 
+    -- neovim coderunner
+    use("metakirby5/codi.vim")
+
+    -- show indent lines  
+    use "lukas-reineke/indent-blankline.nvim"
     
   -- treesitter configuration
     use({
@@ -154,8 +156,10 @@ return packer.startup(function(use)
 
   -- git integration
     use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
-
-
+    
+    
+    -- fterm for terminal 
+    use "numToStr/FTerm.nvim"
     if packer_bootstrap then
         require("packer").sync()
     end

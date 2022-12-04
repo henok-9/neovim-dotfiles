@@ -24,6 +24,9 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
+-- go to matching clause {} () [] 
+keymap.set("n", "<leader>mm", "%") --  go to previous tab
+
 
 -- Plugin Keybinds
 -- vim-maximizer
@@ -38,5 +41,20 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in 
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+
+
+-- FTterm Keybinds
+keymap.set('n', '<leader>gv', '<CMD>lua require("FTerm").toggle()<CR>')
+keymap.set('t', '<leader>vv', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
+
+
+
+-- move between buffers
+keymap.set("n", "<leader>to", ":enew<CR>") -- open new buffer
+keymap.set("n", "<leader>tx", ":bd<CR>") -- close current buffer
+keymap.set("n", "<leader>tn", ":bn<CR>") --  go to next buffer
+keymap.set("n", "<leader>tp", ":bp<CR>") --  go to previous buffer
+keymap.set("n", "<leader>ta", ":BufferCloseAllButCurrent<CR>") --  close all buffers execpt the current one
 
 

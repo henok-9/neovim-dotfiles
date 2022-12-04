@@ -41,8 +41,9 @@ require'lspconfig'.clangd.setup{}
 require'lspconfig'.pyright.setup{}
 -- used to enable autocompletion (assign to every lsp server config)
 local capabilities = cmp_nvim_lsp.default_capabilities()
-
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- c server setup 
+capabilities.offsetEncoding = 'utf-16'
 require'lspconfig'.clangd.setup({
       capabilities = capabilities,
 })

@@ -139,6 +139,16 @@ _G.packer_plugins = {
     path = "/home/shifta/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
+  ["codi.vim"] = {
+    loaded = true,
+    path = "/home/shifta/.local/share/nvim/site/pack/packer/start/codi.vim",
+    url = "https://github.com/metakirby5/codi.vim"
+  },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/shifta/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["coq.artifacts"] = {
     loaded = true,
     path = "/home/shifta/.local/share/nvim/site/pack/packer/start/coq.artifacts",
@@ -188,6 +198,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shifta/.local/share/nvim/site/pack/packer/start/gruvbuddy.nvim",
     url = "https://github.com/tjdevries/gruvbuddy.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/shifta/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["leap.nvim"] = {
     loaded = true,

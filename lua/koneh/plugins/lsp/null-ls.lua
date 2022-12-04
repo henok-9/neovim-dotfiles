@@ -11,6 +11,9 @@ local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 -- to setup format on save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.offsetEncoding = { "utf-16" }
+require("lspconfig").clangd.setup({ capabilities = capabilities })
 -- configure null_ls
 null_ls.setup({
   -- setup formatters & linters

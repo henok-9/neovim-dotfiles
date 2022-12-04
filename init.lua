@@ -15,9 +15,10 @@ require("koneh.plugins.autopairs")
 require("koneh.plugins.treesitter")
 require("koneh.plugins.gitsigns")
 require("koneh.plugins.coc")
+require("koneh.plugins.fterm")
+require("koneh.plugins.indent-blankline")
 -- clangd setup 
 
 require('leap').add_default_mappings()
-
 
 
